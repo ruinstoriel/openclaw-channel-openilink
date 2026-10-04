@@ -1,0 +1,8 @@
+# Normalize text files to LF in the repository; check out native EOL on Windows.
+* text=auto
+
+# Shell scripts and container build files must stay LF to run under Linux/Docker.
+*.sh text eol=lf
+Dockerfile text eol=lf
+Dockerfile.* text eol=lf
+*.mjs text eol=lf
