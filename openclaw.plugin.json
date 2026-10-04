@@ -1,18 +1,61 @@
 {
   "id": "openclaw-channel-openilink",
-  "channels": ["openilink"],
+  "channels": [
+    "openilink"
+  ],
+  "name": "OpeniLink Hub",
+  "description": "Bridge WeChat bots via OpeniLink Hub",
   "configSchema": {
     "type": "object",
-    "properties": {
-      "hub_url": {
-        "type": "string",
-        "description": "OpeniLink Hub URL (e.g., https://hub.openilink.com)"
-      },
-      "app_token": {
-        "type": "string",
-        "description": "App installation token from Hub"
-      }
-    },
+    "properties": {},
     "required": []
+  },
+  "channelConfigs": {
+    "openilink": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "hub_url": {
+            "type": "string",
+            "description": "OpeniLink Hub URL (e.g., https://hub.openilink.com)"
+          },
+          "app_token": {
+            "type": "string",
+            "description": "App installation token from Hub"
+          },
+          "accounts": {
+            "type": "object",
+            "description": "Multi-account overrides keyed by account id",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "hub_url": {
+                  "type": "string",
+                  "description": "Per-account Hub URL override"
+                },
+                "app_token": {
+                  "type": "string",
+                  "description": "Per-account app token override"
+                }
+              }
+            }
+          }
+        },
+        "required": []
+      },
+      "uiHints": {
+        "hub_url": {
+          "label": "Hub URL",
+          "placeholder": "https://hub.openilink.com"
+        },
+        "app_token": {
+          "label": "App Token",
+          "sensitive": true,
+          "placeholder": "app_..."
+        }
+      },
+      "label": "OpeniLink Hub",
+      "description": "Send and receive WeChat messages via OpeniLink Hub"
+    }
   }
 }

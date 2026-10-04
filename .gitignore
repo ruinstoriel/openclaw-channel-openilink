@@ -4,3 +4,5 @@ node_modules/
 *.js.map
 !index.ts
 !src/**/*.ts
+!dist/
+!dist/**
