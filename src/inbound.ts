@@ -1,5 +1,6 @@
 import type { HubWSEvent, HubMessageItem, OpeniLinkConfig } from "./types.js";
 import { getPluginRuntime } from "./runtime.js";
+import { formatInboundEnvelope } from "openclaw/plugin-sdk/channel-inbound";
 
 export async function handleInboundEvent(
   event: HubWSEvent,
@@ -42,7 +43,7 @@ export async function handleInboundEvent(
   let ctx: any;
   try {
     const envelopeOptions = rt.channel.reply.resolveEnvelopeFormatOptions(cfg);
-    body = rt.channel.reply.formatInboundEnvelope({
+    body = formatInboundEnvelope({
       channel: "OpeniLink",
       from: senderName,
       timestamp: event.event.timestamp * 1000,

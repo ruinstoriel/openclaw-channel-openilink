@@ -33,11 +33,11 @@
     "url": "https://github.com/openilink/openclaw-channel-openilink"
   },
   "peerDependencies": {
-    "openclaw": ">=2025.0.0"
+    "openclaw": ">=2026.9.8"
   },
   "devDependencies": {
     "@types/ws": "^8.0.0",
-    "openclaw": "*",
+    "openclaw": "^2026.9.8",
     "typescript": "^5.9.3",
     "vitest": "^4.1.2"
   },

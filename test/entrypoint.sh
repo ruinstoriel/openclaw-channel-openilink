@@ -2,7 +2,7 @@
 set -e
 
 echo "=== Installing OpenClaw ==="
-npm install -g openclaw
+npm install -g openclaw@2026.9.8
 
 echo "=== Installing plugin from local source ==="
 rm -rf /root/.openclaw/extensions/openclaw-channel-openilink
